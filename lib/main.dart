@@ -1,5 +1,5 @@
 
-import 'package:creativa/splash_screen.dart';
+import 'package:creativa/pages/splash_screen.dart';
 import 'package:flutter/material.dart';
 
 void main()=>runApp(const MyApp());
@@ -13,6 +13,7 @@ class MyApp extends StatelessWidget {
    return  MaterialApp(
      theme: ThemeData(
        primarySwatch: Colors.blue,
+       //Default theme for text field
        inputDecorationTheme:  InputDecorationTheme(
          enabledBorder: OutlineInputBorder(
            borderRadius: BorderRadius.circular(20),
@@ -24,7 +25,6 @@ class MyApp extends StatelessWidget {
          ),
          labelStyle: const TextStyle(color: Colors.white60),
        ),
-
      ),
         debugShowCheckedModeBanner: false,
         home:const CustomSplashScreen(),

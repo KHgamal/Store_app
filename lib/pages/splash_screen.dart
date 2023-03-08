@@ -1,6 +1,7 @@
 
 import 'package:animated_splash_screen/animated_splash_screen.dart';
-import 'package:creativa/login.dart';
+
+import 'package:creativa/pages/login.dart';
 import 'package:flutter/material.dart';
 
 class CustomSplashScreen extends StatelessWidget {
