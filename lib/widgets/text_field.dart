@@ -1,25 +1,29 @@
 import 'package:flutter/material.dart';
-class EmailTextField extends StatelessWidget {
-  const EmailTextField({Key? key, required this.controller}) : super(key: key);
+
+import '../constants.dart';
+class CustomTextField extends StatelessWidget {
+  const CustomTextField({Key? key, required this.controller, required this.text,
+    required this.icon,this.obscureText}) : super(key: key);
+  final String text;
+  final bool? obscureText;
+  final IconData icon;
   final TextEditingController controller;
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      obscureText:obscureText==null?false:true,
       controller: controller,
       validator: (value) {
         //if password length is less than 6 print weak password
         if (value == null || value.isEmpty) {
           return 'field is required';
         }
-        else if(!value.contains('@')||!value.contains('.')){
-          return 'Not valid Email ';
-        }
         return null;
       },
       decoration:
-      const  InputDecoration(
-        suffixIcon:Icon(Icons.email_outlined,color: Colors.white60 ,),
-        labelText:"Email",
+        InputDecoration(
+        prefixIcon:Icon(icon),
+        labelText:text,
       ) ,
     );
   }
